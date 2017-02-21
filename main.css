@@ -1,0 +1,128 @@
+body {
+  padding-top: 50px; }
+
+.main-content {
+  padding: 40px 15px; }
+
+.spinner {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 40px 0; }
+  .spinner p {
+    margin-top: 20px; }
+
+.table .col-1 {
+  width: 10%; }
+.table .col-2 {
+  width: 30%; }
+.table .col-3 {
+  width: 30%; }
+.table .col-4 {
+  width: 30%; }
+.table tr td {
+  vertical-align: middle; }
+  .table tr td .profile-photo {
+    width: 30px;
+    height: 30px; }
+
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear; }
+  .modal-backdrop.am-fade.ng-enter {
+    opacity: 0; }
+    .modal-backdrop.am-fade.ng-enter.ng-enter-active {
+      opacity: .5; }
+  .modal-backdrop.am-fade.ng-leave {
+    opacity: .5; }
+    .modal-backdrop.am-fade.ng-leave.ng-leave-active {
+      opacity: 0; }
+
+.sortables {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle; }
+  .sortables span:first-child {
+    position: absolute;
+    top: 0; }
+  .sortables span:last-child {
+    position: absolute;
+    bottom: 0; }
+  .sortables span {
+    color: lightgray;
+    font-size: 18px; }
+  .sortables span:hover {
+    color: #002a80; }
+
+/* products ------------------------------------ */
+.product-box  {
+  background:#FFF;
+  border-color:#CACACA;
+  border-bottom-color:#DADADA;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius:3px;
+  padding:8px;
+}
+
+.product-img img {
+  display:block;
+  margin:0 auto 10px;
+  max-width:100%;
+}
+
+.product-content a  {
+  text-align:center;
+  font-size:14px;
+  color:#696969;
+  display:block;
+}
+
+.product-content .listing-price {
+  text-align:right;
+  color:#78C042;
+  font-size:12px;
+}
+
+/* listing ------------------------------------- */
+.listing-wrap       {
+  background:#FFF;
+  border:1px solid #ECECEC;
+  border-radius:3px;
+  padding:30px;
+}
+
+.listing-images img   {
+  border-radius:3px;
+  margin-bottom:20px;
+}
+
+.listing-description {
+  font-size:16px;
+  margin-bottom:20px;
+}
+
+.listing-comments   {
+  background:#FEFEFE;
+  border-radius:3px;
+  padding:20px;
+}
+
+.listing-comments .comment  {
+  margin-bottom:15px;
+}
+
+.listing-extra    {
+  border:10px solid #E4F3D9;
+  border-radius:3px;
+  padding:20px;
+}
+
+.listing-extra h1 {
+  font-size:20px;
+  line-height:1.2;
+  color:#333;
+  margin:0 0 15px;
+}

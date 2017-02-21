@@ -1,0 +1,114 @@
+<!DOCTYPE html >
+<html lang="en">
+<head >
+  <title >Shop on Mars</title >
+  <base href="/">
+  <link href="./bower_components/libs/bootstrap/dist/css/bootstrap.min.css"
+        rel="stylesheet" >
+  <link href="./bower_components/angularjs-toaster/toaster.min.css"
+        rel="stylesheet" >
+  <link href="./bower_components/ladda/dist/ladda-themeless.min.css"
+        rel="stylesheet" >
+  <link href="./bower_components/font-awesome/css/font-awesome.min.css"
+        rel="stylesheet" >
+  <link href="main.css"
+        rel="stylesheet" >
+  <link href="paper.css"
+        rel="stylesheet" >
+</head >
+
+<body ng-app="shopOnMars" ng-controller="MainController as main">
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container" >
+      <div class="navbar-header" >
+        <a class="navbar-brand"
+           href="/" >
+           <span class="glyphicon glyphicon-heart-empty"></span>
+           Shop on Mars
+        </a >
+
+      <form class="navbar-form navbar-left" >
+
+        <div class="form-group" >
+          <input type="text"
+                 class="form-control"
+                 id="name"
+                 ng-model="contacts.search"
+                 ng-model-options="{ debounce: 300 }"
+                 placeholder="Search name..."
+              />
+         <span class="glyphicon glyphicon-search"></span>
+        </div >
+      </form >
+
+      </div >
+        <!-- logged in navigation -->
+        <!-- todo: check for logged in user -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" ng-show="currentUser.id">
+            <li><a ui-sref="admin">Admin</a></li>
+            <li><a ui-sref="profile">Profile</a></li>
+            <li><a ng-click="main.logout()">Logout</a></li>
+          </ul>
+
+          <!-- not logged in navigation -->
+          <ul class="nav navbar-nav navbar-right" ng-show="!currentUser.id">
+            <li><a ui-sref="authenticate">Register</a></li>
+            <li><a ui-sref="authenticate">Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+    </div >
+  </nav >
+
+  <div class="container main-content" >
+
+    <toaster-container ></toaster-container >
+
+    <main class="row" >
+
+      <div ui-view>
+      </div>
+
+    </div>
+  </div >
+
+  <footer class="text-center">&copy; 2015 Mars Wang</footer>
+
+  <!-- index.html -->
+  <!-- JS -->
+  <!-- load the stamplay sdk and configure it -->
+  <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
+  <script>
+      Stamplay.init('marsapp');   // initiate stamplay app with app name
+  </script>
+
+  <!-- load our other JS dependencies -->
+  <script src="./bower_components/angular/angular.min.js"></script>
+  <script src="./bower_components/angular-stamplay/angular-stamplay.js"></script>
+  <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="./bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+  <!-- load all the parts for our custom angular app -->
+  <!-- youd probably want to compile all this with a build system like gulp -->
+  <!-- load our angular components -->
+  <script src="./app/components/home/home.js"></script>
+  <script src="./app/components/shop/shop.js"></script>
+  <script src="./app/components/product/product.js"></script>
+  <script src="./app/components/checkout/checkout.js"></script>
+  <script src="./app/components/profile/profile.js"></script>
+  <script src="./app/components/admin/admin.js"></script>
+  <script src="./app/components/authenticate/authenticate.js"></script>
+
+  <!-- load our angular services -->
+  <script src="./app/shared/ProductService.js"></script>
+  <script src="./app/shared/UserService.js"></script>
+  <script src="./app/shared/OrderService.js"></script>
+  <script src="./app/shared/ShopService.js"></script>
+
+  <!-- load our core angular app -->
+  <script src="./app/app.routes.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
+</body >
+</html >
